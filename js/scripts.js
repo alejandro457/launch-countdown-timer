@@ -46,7 +46,7 @@ volumeBtn.addEventListener('click', () => {
 	if (muted) {
 		muted = false;
 		unMute();
-		
+
 	} else {
 		muted = true;
 		mute();
@@ -112,14 +112,7 @@ const startTimer = (days, hours, minutes, seconds) => {
 		el.firstElementChild.textContent = time[index] > 9 ? time[index] : '0' + time[index];
 	})
 
-	timer.addEventListener('transitionend', (e) => {
-		let num = time[cards.indexOf(e.target)];
 
-		e.target.parentElement.dataset.time = num > 9 ? num : '0' + num;
-		e.target.firstElementChild.textContent = num > 9 ? num : '0' + num;
-		
-		e.target.classList.remove('is-flipped');
-	})
 
 	interval = setInterval(countdown, 1000);
 }
@@ -128,6 +121,15 @@ const main = () => {
 	flipSound.volume = volume.value;
 	mute();
 	startTimer(1, 1, 1, 3);
+
+	timer.addEventListener('transitionend', (e) => {
+		let num = time[cards.indexOf(e.target)];
+
+		e.target.parentElement.dataset.time = num > 9 ? num : '0' + num;
+		e.target.firstElementChild.textContent = num > 9 ? num : '0' + num;
+		
+		e.target.classList.remove('is-flipped');
+	});
 }
 
 main();
