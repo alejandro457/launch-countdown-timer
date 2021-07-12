@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <title>Frontend Mentor | Launch countdown timer</title>
+
+</head>
+<body>
+  <header class="header">
+    <div class="volume">
+      <button id="volume-btn" class="button">
+        <span class="material-icons">volume_off</span>
+      </button>
+      <input class="volume__slider" type="range" id="volume" disabled min="0.01" max="1" value="0.2" step="0.01">
+    </div>
+    
+    <button id="settings-btn" class="button button--settings">
+      <span class="material-icons">settings</span>
+    </button>
+    <form id="settings" class="settings">
+      <label class="settings__label">
+        <input class="settings__input" type="number" name="days" min="0" max="99" value="0">
+        Days 
+      </label>
+      <label class="settings__label">
+        <input class="settings__input" type="number" name="hours" min="0" max="24" value="0">
+        Hours
+      </label>
+      <label class="settings__label">
+        <input class="settings__input" type="number" name="minutes" min="0" max="60" value="0">
+        Minutes
+      </label>
+      <label class="settings__label">
+        <input class="settings__input" type="number" name="seconds" min="0" max="60" value="0">
+        Seconds
+      </label>
+  
+      <div>
+        <button class="settings__button" type="submit">Start</button>
+        <button class="settings__button" type="reset">Cancel</button>
+      </div>
+      
+    </form>
+  </header>
+
+  <main class="main">
+    <h1 class="heading">We're launching soon</h1>
+
+    <div id="timer" class="timer">
+      <div class="timer__column">
+        <div class="timer__card" data-time="00" data-timetop="00">
+          <div id="days" class="timer__flap">
+            <div class="timer__flap-face timer__flap-face--front">00</div>
+            <div class="timer__flap-face timer__flap-face--back">00</div>
+          </div>
+        </div>
+        <p class="timer__text">Days</p>
+      </div>
+
+      <div class="timer__column">
+        <div class="timer__card" data-time="00" data-timetop="00">
+          <div id="hours" class="timer__flap">
+            <div class="timer__flap-face timer__flap-face--front">00</div>
+            <div class="timer__flap-face timer__flap-face--back">00</div>
+          </div>
+        </div>
+        <p class="timer__text">Hours</p>
+      </div>
+
+      <div class="timer__column">
+        <div class="timer__card" data-time="00" data-timetop="00">
+          <div id="minutes" class="timer__flap">
+            <div class="timer__flap-face timer__flap-face--front">00</div>
+            <div class="timer__flap-face timer__flap-face--back">00</div>
+          </div>
+        </div>
+        <p class="timer__text">Minutes</p>
+      </div>
+
+      <div class="timer__column">
+        <div class="timer__card" data-time="00" data-timetop="00">
+          <div id="seconds" class="timer__flap">
+            <div class="timer__flap-face timer__flap-face--front">00</div>
+            <div class="timer__flap-face timer__flap-face--back">00</div>
+          </div>
+        </div>
+        <p class="timer__text">Seconds</p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <ul class="social">
+      <li>
+        <a class="social__link" href="https://facebook.com/" target="_blank">
+          <img class="social__icon" src="./assets/images/icon-facebook.svg" alt="go to facebook">
+        </a>
+      </li>
+      <li>
+        <a class="social__link" href="https://pinterest.com/" target="_blank">
+          <img class="social__icon" src="./assets/images/icon-pinterest.svg" alt="go to pinterest">
+        </a>
+      </li>
+      <li>
+        <a class="social__link" href="https://instagram.com/" target="_blank">
+          <img class="social__icon" src="./assets/images/icon-instagram.svg" alt="go to instagram">
+        </a>
+      </li>
+    </ul>
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </footer>
+  <script src="./js/scripts.js"></script>
+</body>
+</html>
